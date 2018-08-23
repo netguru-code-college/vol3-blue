@@ -25,7 +25,6 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "simplecov"
-
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
