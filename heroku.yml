@@ -1,0 +1,9 @@
+build:
+  languages:
+    - ruby
+release:
+  command:
+    - rake db:migrate
+run:
+  web: bundle exec puma -C config/puma.rb
+  worker: bundle exec sidekiq -c 5 -v -e production
