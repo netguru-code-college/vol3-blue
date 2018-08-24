@@ -1,11 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe WelcomeController, type: :controller do
+describe WelcomeController, type: :controller do
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
+  describe "GET /" do
+    context 'when user is not signed in' do
+      let(:response) { get :index }
+      let(:app_title) { 'Activity app' }
+
+      it "returns http success" do
+        expect(response).to have_http_status(:success)
+      end
+
+      it "has correct title" do
+
+      end
     end
   end
 
