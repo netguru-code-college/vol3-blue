@@ -1,1 +1,8 @@
 %h2 Locations
+
+- if @locations.any?
+  - @locations.each do |location|
+    %h5= location.name
+    %h6= location.gps_latitude
+    %h6= location.gps_longitude
+    <br>

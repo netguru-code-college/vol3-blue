@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'locations/index'
-  get 'locations/new'
-  get 'locations/create'
-  get 'locations/edit'
+  resources :locations, only: [:index, :show, :edit, :update]
   root 'welcome#index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
