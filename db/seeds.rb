@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Location.destroy_all
-
 Location.create(name: 'Warsaw', gps_latitude: '21.03', gps_longitude: '52.22')
 Location.create(name: 'Krakow', gps_latitude: '19.96', gps_longitude: '50.08')
 Location.create(name: 'Poznan', gps_latitude: '16.92', gps_longitude: '52.4')
