@@ -17,6 +17,7 @@ gem 'devise'
 gem 'draper'
 gem 'sidekiq'
 gem 'will_paginate'
+gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml', '~> 5.0', '>= 5.0.4'
 
