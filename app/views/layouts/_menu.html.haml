@@ -1,2 +1,4 @@
 =link_to "Sign in", new_user_session_path, :class => "btn btn-sm btn-primary"
 =link_to "Sign up", new_user_registration_path , :class => "btn btn-sm btn-success"
+- if signed_in?  
+  =link_to "Locations", locations_index_path , :class => "btn btn-sm btn-success"
