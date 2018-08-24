@@ -1,7 +1,14 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 before_script:
-  - bundle exec rake db:create
-  - bundle exec rake db:migrate
-  - bundle exec rake assets:precompile
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: "e3YpFwgq7BQVuMFWcJv1uvewXw9KiODasvsfQ+RDP6mCoxInyEpY1B4HbefIRS8bZSudjyuFw/i4y8CYGiu5qvLuDYfiwmQvLVwCssZNbHFEMalzcSbcWLvul6mmFiGchsWXs5V8/MwKTqL/cTzvBVnzvrQ9wUcRSuePpIxz0rcxb3VeMUBePCRjh/OdAqeu9CL2/aNqvGsU8R2tKbFkqHQnGaCP3H4VeSZk5Vd5feEJZLpiwQhhjy9GCPQPxFnAHbUv7yyOcVoxXS7pgrePGlxNmmFXq4ayHpIHESS+e0yzKxVb5Oxj8mWpRPvA+aRg2QB1WvKqd3vU14/6YFUypoIAPaGe5NjQUsX5jI9QFSlpZqzqE6vJgpuD8lyK7i4YRSupS+Pu+jTSO145mRxOcJi27dChsDezGxFKrf04jWYhEgnO6VGydzVDPRzhSQu4t54XjkdW4RM47KTiPXnnfn5uOdb+MPie3jC5M7gkIrrVT1f1s7ohneP9i3RpSMGh05PuGNL+SNHsBsGjNtMiEQ5No5oxDiJL1RhJumXcV3Habyk3eLPleD67a3IlzQTyLlQawZwxJ1QsVf7BYonWP2qp1g+PyTpAm3koX9/DyFI3jPjArbxO8xS3Y5oa//tGUxNBsdAwtgxmqOila4gxzjrchbZSkmrdJvHgnf1RE8I="
+  app: activity-app-ncc
+  on:
+    repo: netguru-code-college/vol3-blue
