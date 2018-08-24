@@ -8,7 +8,7 @@ before_script:
 deploy:
   provider: heroku
   api_key:
-    secure: env['herokutoken']
+    secure: "gvcDceb3vPWVDP382sGkIxORS4vE185z3i9k+/dKVwACpLwjNmmo0nvLnY4QXE1wojaCLBdud2ESxMfPVg1/aYtag86KuPyweKI7bWjfD5wUZpcFn335y4g4mIp7REJaO0q4LTE9N/a7HsSOWC/1PbU6ZFt57nq4mVDQ5L2/U2qCFJU+i8UlRZkGNjvjYaJYQ8Gve4WrRcPz5kHwJZAS4IvMgrCLYh3UOP5YaGfnfvUJ0SBRu3dGQvXz+vNnxHBLPCVk/iW5q1BYK80EqMhGeddWvHqytDX/Lk0GwVYdcoPR7k6zepVZ5qWFHerG5sgbwD3ptrjCNGeFAaETY9FqFbOKp4sT0xX/OmtK2021tlbfs5xrANMhCHqB4wNksTNoihlscz0XJCWb50yDjb3Axh0/lOHGp35iCdDpUHGDUh+FpjY7hL9xrPH6le2+tM8qAKdQGWqvR0iBtJDGZsk2KP6kp6EH13GVT50UJG+u7fMk5nRxTco7ZH9cQFTdX0+1ipFwkqXoIjOruq7IygEZirn2d+6+SucdGdykARKVg1p6g/6EGmsedno5Tt1bKnI/7Ju8/sSRLUkIAJqE976hgD++sy8p5kDxvxq5f0g/yZHUU9W6PsBMQv94S4jv7QuqCMA9YMB5vgUqZr1rfNc4RGOdTZSkkISkz8qBNo9WDbw="
   app: activity-app-ncc
   on:
     repo: netguru-code-college/vol3-blue
