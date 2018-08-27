@@ -1,1 +1,13 @@
 %h2 New Location
+= form_for @location, url: locations_path do |f|
+	= f.label :name
+	= f.text_field :name
+	<br>
+	= f.label :gps_latitude
+	= f.text_field :gps_latitude
+	<br>
+	= f.label :gps_longitude
+	= f.text_field :gps_longitude
+
+	<br>
+	= f.submit "Add Location", :class => "btn btn-success"
