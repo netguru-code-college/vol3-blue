@@ -1,7 +1,11 @@
 FactoryBot.define do
   factory :requirement do
-    type ""
-    operator "MyString"
-    value "9.99"
+    weather_type { Faker::Cat.name }
+    operator { Requirement::OPERATORS.sample }
+    value { Faker::Number.decimal(2) }
+
+    trait :invalid do
+      value { nil }
+    end
   end
 end

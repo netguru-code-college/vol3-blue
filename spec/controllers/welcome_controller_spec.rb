@@ -1,25 +1,15 @@
 require 'rails_helper'
 
 describe WelcomeController, type: :controller do
+  context 'GET :index' do
+    before { get :index }
 
-  describe '' do
-    context 'when user is not signed in' do
-      let(:response) { get :index }
-      let(:app_title) { 'Activity app' }
-
-      it "returns http success" do
-        expect(response).to have_http_status(:success)
-      end
+    it 'response with success' do
+      expect(response).to have_http_status(:success)
     end
 
-    context 'when user is signed in' do
-      let!(:user) { create(:user) }
-      it 'has link to' do
-        sign_in user
-        visit root_path
-        expect(page).to include('Log out')
-      end
+    it 'renders the index view' do
+      expect(response).to render_template :index
     end
   end
-
-end
+end 
