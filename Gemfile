@@ -20,6 +20,9 @@ gem 'will_paginate'
 gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails', '~> 1.0'
+gem 'rest-client'
+# nice handling for services object
+gem 'light_operations'
 
 group :development, :test do
   gem "capybara"
