@@ -1,0 +1,17 @@
+%h2 Show Location
+
+- flash.each do |key, value|
+	.alert.alert-success 
+		%p= value
+.card.card-body.bg-light
+	%h5= @location.name
+	%h6
+	Latitude: 
+	= @location.gps_latitude
+	%h6
+	Longitude: 
+	= @location.gps_longitude
+	<br>
+	%p
+	=link_to 'Edit', edit_location_path(@location), class: 'btn btn-primary', style: 'width: 100px'
+	=link_to 'Delete', location_path(@location), method: :delete, data: {confirm: 'If you confirm, the location will be deleted irreversibly: '}, class: 'btn btn-danger', style: 'width: 100px'
