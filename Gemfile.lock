@@ -108,6 +108,7 @@ GEM
     faker (1.9.1)
       i18n (>= 0.7)
     ffi (1.9.25)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -323,6 +324,7 @@ DEPENDENCIES
   erb2haml
   factory_bot_rails
   faker
+  geocoder
   haml-rails (~> 1.0)
   jbuilder (~> 2.5)
   jquery-rails
