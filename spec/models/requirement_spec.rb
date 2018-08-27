@@ -2,6 +2,14 @@ require 'rails_helper'
 
 describe Requirement, type: :model do
   context "validation tests" do
+    context 'invalid model' do
+      let(:invalid_requirement) { build(:requirement, :invalid) }
+      
+      it 'is invalid' do
+        expect(invalid_requirement).to be_invalid
+      end
+    end
+
     it "ensures requirement present" do
       requirement = Requirement.new()
       expect(requirement.valid?).to eq(false)
