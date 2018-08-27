@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_143904) do
+ActiveRecord::Schema.define(version: 2018_08_27_170020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_143904) do
   create_table "activities", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
-    t.integer "temp_min"
-    t.integer "temp_max"
-    t.boolean "rain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
