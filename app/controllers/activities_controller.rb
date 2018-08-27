@@ -5,14 +5,8 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
-  def show
-  end
-
   def new
     @activity = current_user.activities.new
-  end
-
-  def edit
   end
 
   def create
