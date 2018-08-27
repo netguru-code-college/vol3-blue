@@ -4,9 +4,8 @@
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        %a.nav-link{:href => "#"}
-          Home
+      %li
+        =link_to "Home", root_path, :class => "nav-link"
       %li
         =link_to "Locations", locations_path, :class => "nav-link"
       %li.nav-item.dropdown
