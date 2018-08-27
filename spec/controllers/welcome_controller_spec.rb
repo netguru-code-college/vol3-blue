@@ -10,9 +10,13 @@ describe WelcomeController, type: :controller do
       it "returns http success" do
         expect(response).to have_http_status(:success)
       end
+    end
 
-      it "has correct title" do
-
+    context 'when user is signed in' do
+      it 'has link to' do
+        sign_in create(:user, name: 'John Doe')
+        visit root_path
+        expect(page).to include('John Doe')
       end
     end
   end
