@@ -12,14 +12,14 @@ describe Requirement, type: :model do
       expect(requirement.save).to eq(true)
     end
 
-    it "validates presence of weather_type" do
-      should validate_presence_of(:weather_type)
-    end
+    it { should validate_presence_of(:weather_type) }
 
     it { should validate_presence_of(:operator) }
 
-    it "validates presence of value" do
-      should validate_presence_of(:value)
-    end
+    it { should validate_presence_of(:value) }
+
+    it{ should validate_length_of(:weather_type).is_at_least(2).is_at_most(30) }
+
+    # it { should validate_numericality_of(:value) }
   end
 end
