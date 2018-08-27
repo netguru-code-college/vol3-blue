@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe WelcomeController, type: :controller do
 
-  describe "GET /" do
+  describe '' do
     context 'when user is not signed in' do
       let(:response) { get :index }
       let(:app_title) { 'Activity app' }
@@ -13,10 +13,11 @@ describe WelcomeController, type: :controller do
     end
 
     context 'when user is signed in' do
+      let!(:user) { create(:user) }
       it 'has link to' do
-        sign_in create(:user, name: 'John Doe')
+        sign_in user
         visit root_path
-        expect(page).to include('John Doe')
+        expect(page).to include('Log out')
       end
     end
   end
