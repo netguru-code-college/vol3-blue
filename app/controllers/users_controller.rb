@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     end
 
     def set_location
-      if !current_user.location
+      if current_user.location.empty?
         @location = Location.find_by(params[:id])
         User.update(location: @location)
       end
