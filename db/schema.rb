@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2018_08_27_125701) do
-
+ActiveRecord::Schema.define(version: 2018_08_27_170020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +18,6 @@ ActiveRecord::Schema.define(version: 2018_08_27_125701) do
   create_table "activities", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
-    t.integer "temp_min"
-    t.integer "temp_max"
-    t.boolean "rain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_activities_on_user_id"
@@ -43,6 +38,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_125701) do
     t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "activity_id"
+    t.index ["activity_id"], name: "index_requirements_on_activity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,4 +60,5 @@ ActiveRecord::Schema.define(version: 2018_08_27_125701) do
   end
 
   add_foreign_key "activities", "users"
+  add_foreign_key "requirements", "activities"
 end
