@@ -3,5 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
+
   validates :user_name, presence: true
+  has_many :activities
 end
