@@ -14,13 +14,13 @@ class FetchWeatherService
 		raw_response = make_request
 		#raw_response
 
-		create_weather_object(raw_response)
+		create_weather_object(raw_response, city_id)
 	end
 
 	private
 
-	def create_weather_object(weather_response)
-		CreateWeatherObjectService.new(weather_response).call
+	def create_weather_object(weather_response, city_id)
+		CreateWeatherObjectService.new(weather_response, city_id).call
 	end
 
 	def make_request
