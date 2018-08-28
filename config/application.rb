@@ -15,6 +15,10 @@ Bundler.require(*Rails.groups)
 module Activitiesapp
   class Application < Rails::Application
     config.load_defaults 5.2
+
+    # configuration to cache location
+    config.cache_store = :file_store, File.join(Rails.root, 'storage', 'cache')
+    
     config.generators do |g|
       g.system_tests = nil
       g.template_engine :haml
@@ -25,6 +29,8 @@ module Activitiesapp
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
+
+    config.eager_load_paths << Rails.root.join('app/data-objects')
   end
 
   
