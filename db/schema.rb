@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_082155) do
+ActiveRecord::Schema.define(version: 2018_08_28_091025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,17 +23,22 @@ ActiveRecord::Schema.define(version: 2018_08_28_082155) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
-  create_table "locations", force: :cascade do |t|
+  create_table "cities", force: :cascade do |t|
     t.string "name"
-    t.string "gps_latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "gps_longitude"
-    t.integer "open_weather_city_id"
-    t.decimal "temperature"
+    t.integer "open_weather_api_id"
+    t.decimal "temp"
     t.integer "humidity"
     t.integer "clouds"
-    t.index ["name"], name: "index_locations_on_name", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "open_weather_city_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "requirements", force: :cascade do |t|
