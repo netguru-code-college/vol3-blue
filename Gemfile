@@ -37,6 +37,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'erb2haml'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
