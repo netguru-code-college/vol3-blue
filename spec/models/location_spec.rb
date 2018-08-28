@@ -8,7 +8,7 @@
 #  open_weather_city_id :integer
 #  user_id              :integer
 #
-
+#
 
 require 'rails_helper'
 

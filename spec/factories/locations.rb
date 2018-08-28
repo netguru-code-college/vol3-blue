@@ -1,5 +1,4 @@
-
-
+# == Schema Information
 #
 # Table name: locations
 #
@@ -9,7 +8,7 @@
 #  open_weather_city_id :integer
 #  user_id              :integer
 #
-
+#
 
 FactoryBot.define do
   factory :location do

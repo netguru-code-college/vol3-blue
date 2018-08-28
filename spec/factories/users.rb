@@ -1,3 +1,4 @@
+# == Schema Information
 #
 # Table name: users
 #
@@ -17,10 +18,12 @@
 #
 
 FactoryBot.define do
+  user_password = Faker::String.random(10)
+
   factory :user do
     email { Faker::Internet.email  }
-    password { 'asdsadasd' }
-    password_confirmation { 'asdsadasd' }
-    created_at { '' }
+    password { user_password }
+    password_confirmation { user_password }
+    confirmed_at { DateTime.now }
   end
 end

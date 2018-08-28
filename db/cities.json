@@ -1,0 +1,47 @@
+[
+  {
+    "id": 756135,
+    "name": "Warsaw",
+    "country": "PL",
+    "coord": {
+      "lon": 21.01178,
+      "lat": 52.229771
+    }
+  },
+  {
+    "id": 3081368,
+    "name": "Wroclaw",
+    "country": "PL",
+    "coord": {
+      "lon": 17.033331,
+      "lat": 51.099998
+    }
+  },
+  {
+    "id": 3099434,
+    "name": "Gdansk",
+    "country": "PL",
+    "coord": {
+      "lon": 18.64637,
+      "lat": 54.352051
+    }
+  },
+  {
+    "id": 3094802,
+    "name": "Krakow",
+    "country": "PL",
+    "coord": {
+      "lon": 19.91667,
+      "lat": 50.083328
+    }
+  },
+  {
+    "id": 7530858,
+    "name": "Poznań",
+    "country": "PL",
+    "coord": {
+      "lon": 16.901541,
+      "lat": 52.400631
+    }
+  }
+]
