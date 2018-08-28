@@ -20,4 +20,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
   has_many :activities
+  has_many :locations
 end
