@@ -21,6 +21,9 @@ gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'geocoder'
 gem 'haml-rails', '~> 1.0'
+gem 'rest-client'
+# nice handling for services object
+gem 'light_operations'
 
 group :development, :test do
   gem "capybara"
@@ -34,6 +37,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'erb2haml'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
