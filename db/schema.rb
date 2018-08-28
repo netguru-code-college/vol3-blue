@@ -10,17 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_080824) do
+
+ActiveRecord::Schema.define(version: 2018_08_28_091025) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "locations", force: :cascade do |t|
+  create_table "activities", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
-    t.string "gps_latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "gps_longitude"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "open_weather_api_id"
+    t.decimal "temp"
+    t.integer "humidity"
+    t.integer "clouds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "open_weather_city_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "requirements", force: :cascade do |t|
@@ -29,6 +49,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_080824) do
     t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "activity_id"
+    t.index ["activity_id"], name: "index_requirements_on_activity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +71,6 @@ ActiveRecord::Schema.define(version: 2018_08_28_080824) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "users"
+  add_foreign_key "requirements", "activities"
 end
