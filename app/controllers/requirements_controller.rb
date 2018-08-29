@@ -1,8 +1,4 @@
 class RequirementsController < ApplicationController
-  def index
-  	@Requirements = Requirement.all
-  end
-
   def new
     @activity = Activity.find(params[:activity_id])
     @requirement = @activity.requirements.new
