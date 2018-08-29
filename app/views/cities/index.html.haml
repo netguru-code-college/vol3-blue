@@ -1,0 +1,14 @@
+%h1 Cities
+
+- if @cities.any?
+  %table
+    - @cities.each do |city|
+      %tr
+        %td 
+          = city.name
+        %td 
+          = city.temp
+        %td 
+          = city.humidity
+        %td 
+          = city.clouds
