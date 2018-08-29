@@ -16,11 +16,9 @@ ActiveRecord::Schema.define(version: 2018_08_29_073651) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.bigint "user_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -72,7 +70,6 @@ ActiveRecord::Schema.define(version: 2018_08_29_073651) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "activities", "users"
   add_foreign_key "locations", "activities"
   add_foreign_key "requirements", "activities"
 end
