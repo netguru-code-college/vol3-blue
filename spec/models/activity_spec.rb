@@ -12,7 +12,7 @@
 require 'rails_helper'
 
 RSpec.describe Activity do
-  subject { build :activity }
+  subject { create(:activity, :user) }
   it { is_expected.to be_valid }
 
   describe 'associations' do
