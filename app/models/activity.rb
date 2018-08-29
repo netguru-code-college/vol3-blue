@@ -11,6 +11,7 @@
 
 class Activity < ApplicationRecord
   belongs_to :user
+  has_many :locations
   has_many :requirements
 
   validates :name, presence: true
