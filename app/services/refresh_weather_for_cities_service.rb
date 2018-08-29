@@ -1,6 +1,5 @@
 class RefreshWeatherForCitiesService 
-  def initialize
-  end
+  def initialize; end
 
   def call
     update_weather_on_cities
@@ -19,10 +18,7 @@ class RefreshWeatherForCitiesService
       City.find_by(open_weather_api_id: city_id).update(temp: temperature, clouds: clouds, humidity: humidity)
     end
   end
-
-  def prepare_query
-  end
-
+  
   def city_weather_objects
     Hash[
       cities_ids.collect { |city_id| 
