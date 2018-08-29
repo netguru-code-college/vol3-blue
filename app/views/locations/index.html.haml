@@ -1,16 +1,32 @@
 %h2 Locations
 
-- if @locations.any?
-	- @locations.each do |location|
-		.card.card-body.bg-light
-			%h5= location.open_weather_city_id
-			<br><br>
-			=link_to "More", location_path(location), class: 'btn btn-primary', style: 'width: 100px'
-
-		<br>
+%table.table.table-striped#dttb
+	%thead
+		%tr
+		%th{:scope => "col"} Location
+		%th{:scope => "col"} Activity
+		%th{:scope => "col"} Weather
+		%th{:scope => "col"} Requirements
+	%tbody
+		- @locations.each do |location|
+			%tr
+			%th{:scope => "row"} 
+				= location.city.name
+			%td 
+				= location.activity.name
+			%td 
+				H:
+				= location.city.check_humidity
+				T:
+				= location.city.check_temp
+			%td 
+				=location.activity.requirements.map(&:weather_type).join(", ")
+        
+        
 .row
 	.col-md-12
 		=link_to 'New Location', new_location_path, class: 'btn btn-success', style: 'width: 200px'
-		%br/
+				
+
 
 

@@ -10,8 +10,9 @@
 #
 
 class Activity < ApplicationRecord
-  has_many :requirements
+  belongs_to :user
   has_many :locations
+  has_many :requirements
 
   validates :name, presence: true
 end

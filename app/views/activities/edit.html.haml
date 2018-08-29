@@ -1,7 +1,12 @@
 %h1 Editing activity
 
 = render 'form'
-
-= link_to 'Show', @activity
-\|
 = link_to 'Back', activities_path
+
+.row
+  .col-sm-6
+    = render partial: 'locations', locals: {activity: @activity}
+    = link_to 'New Location', new_activity_location_path(@activity), class: 'btn btn-success', style: 'width: 200px'
+  .col-sm-6
+    = render partial: 'requirements', locals: {activity: @activity}
+    = link_to 'New Requirement', new_activity_requirement_path(@activity), class: 'btn btn-success', style: 'width: 200px'
