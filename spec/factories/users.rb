@@ -21,8 +21,13 @@ FactoryBot.define do
   user_password = Faker::String.random(10)
 
   factory :user do
+<<<<<<< HEAD
     email { Faker::Internet.email  }
     user_name { Faker::FunnyName.name }
+=======
+    email { Faker::Internet.email }
+    user_name { Faker::Name.name }
+>>>>>>> 27df224c1faa458e68c534047e97980038911d1f
     password { user_password }
     password_confirmation { user_password }
     confirmed_at { DateTime.now }

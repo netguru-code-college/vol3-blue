@@ -361,6 +361,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-datatables
   jquery-rails
+  json
   light_operations
   listen
   open-weather
