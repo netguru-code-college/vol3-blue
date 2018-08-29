@@ -4,14 +4,17 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = Location.new
+    @activity = Activity.find(params[:activity_id])
+    @location = @activity.locations.new
   end
 
   def create
-    @location = Location.new(location_params)
+    @activity = Activity.find(params[:activity_id])
+    @location = @activity.locations.new(location_params)
+    @location.user = current_user
     if(@location.save)
       flash[:success] = "Location added!"
-      redirect_to @location
+      redirect_to edit_activity_path(@activity)
     else
       render 'new'
     end
@@ -41,6 +44,6 @@ class LocationsController < ApplicationController
   end
   
   private def location_params
-    params.require(:location).permit(:name, :gps_latitude, :gps_longitude)
+    params.require(:location).permit(:user_id, :city_id, :activity_id)
   end
 end

@@ -18,6 +18,7 @@ gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
 gem 'draper'
 gem 'sidekiq'
+gem 'simple_form'
 gem 'will_paginate'
 gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
