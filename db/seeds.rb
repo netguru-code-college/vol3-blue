@@ -11,8 +11,8 @@ cities_data = File.read(Rails.root + 'db/cities.json')
 cities_data = JSON.parse(cities_data)
 
 cities_data.each do |city|
-  name = city[:name]
-  id = city[:id]
+  name = city["name"]
+  id = city["id"]
 
   City.create(name: name, open_weather_api_id: id)
 end
