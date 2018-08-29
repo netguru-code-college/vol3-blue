@@ -5,9 +5,15 @@
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
       %li
-        =link_to "Home", root_path, :class => "nav-link"
+        =link_to "Activities", activities_path, class:"nav-link"
       %li
-        =link_to "Locations", locations_path, :class => "nav-link"
+        =link_to "Locations", locations_path, class:"nav-link"
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          My profile
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          =link_to "Edit profile", edit_user_registration_path , :class => "dropdown-item"
+    %form.form-inline.my-2.my-lg-0
       - if current_user.present? 
         %li.nav-item.dropdown
           %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -18,7 +24,8 @@
     %form.form-inline.my-2.my-lg-0
       - if current_user
         Welcome, 
-        =current_user.email
+        =current_user.user_name
+
         =link_to "Log out", destroy_user_session_path , :class => "btn btn-sm btn-danger", method: :delete
       - else
         =link_to "Sign in", new_user_session_path, :class => "btn btn-sm btn-primary mr-1"

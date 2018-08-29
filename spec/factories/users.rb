@@ -13,13 +13,16 @@
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  user_name              :string
+#  location               :string
 #
 
 FactoryBot.define do
   user_password = Faker::String.random(10)
 
   factory :user do
-    email { Faker::Internet.email  }
+    email { Faker::Internet.email }
+    user_name { Faker::Name.name }
     password { user_password }
     password_confirmation { user_password }
     confirmed_at { DateTime.now }

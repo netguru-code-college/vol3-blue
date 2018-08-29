@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    %p
+      User name: #{current_user.user_name}
+    %p
+      User email: #{current_user.email}
+    %p
+      - if !current_user.location
+        #{link_to "Please, set location", set_location_path, class: "btn btn-primary"}
+      - else
+        %p User location: #{current_user.location}

@@ -13,4 +13,8 @@
 #
 
 class City < ApplicationRecord
+  has_many :locations, dependent: :destroy
+  validates :name, :clouds, :humidity, :temp,
+      presence: true
+  validates :open_weather_api_id, :temp, :humidity, :clouds, format: /[0-9]/
 end
