@@ -1,21 +1,15 @@
-%h1 Listing activities
+%h1 My activities
+%ul.list-group
+  - @activities.each do |activity|
+    %li.list-group-item.list-group-item-action
+      .row
+        .col-sm-8
+          %h3= activity.name
+        .col-sm-2= link_to 'Edit', edit_activity_path(activity), class: 'btn btn-sm btn-outline-info'
+        .col-sm-2= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
+      .row
+        .col-sm-6= render partial: 'locations', locals: {activity: activity}
+        .col-sm-6= render partial: 'requirements', locals: {activity: activity}
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @activities.each do |activity|
-      %tr
-        %td= activity.name
-        %td= link_to 'Show', activity
-        %td= link_to 'Edit', edit_activity_path(activity)
-        %td= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Activity', new_activity_path
+= link_to 'New Activity', new_activity_path, class: 'btn btn-success'
+ 

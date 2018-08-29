@@ -13,6 +13,7 @@
 #
 
 class City < ApplicationRecord
+
   has_many :locations, dependent: :destroy
   validates :name, :clouds, :humidity, :temp,
       presence: true

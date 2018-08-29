@@ -24,4 +24,5 @@ class User < ApplicationRecord
          :confirmable
   validates :user_name, presence: true
   has_many :activities
+  has_many :locations
 end
