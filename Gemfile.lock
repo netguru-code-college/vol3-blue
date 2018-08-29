@@ -352,6 +352,7 @@ DEPENDENCIES
   haml-rails (~> 1.0)
   jbuilder (~> 2.5)
   jquery-rails
+  json
   light_operations
   listen
   open-weather
