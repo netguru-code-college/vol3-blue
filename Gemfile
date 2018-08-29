@@ -23,6 +23,7 @@ gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'geocoder'
 gem 'haml-rails', '~> 1.0'
+gem 'json'
 gem 'rest-client'
 gem 'ransack'
 # nice handling for services object
