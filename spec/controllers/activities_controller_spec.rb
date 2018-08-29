@@ -15,7 +15,7 @@ RSpec.describe ActivitiesController do
   end
 
   describe 'GET #edit' do
-    let!(:activity) { create(:activity, user_id: user.id) }
+    let!(:activity) { create(:activity) }
     subject { response }
 
     before do
@@ -49,7 +49,7 @@ RSpec.describe ActivitiesController do
   end
 
   describe 'PUT #update' do
-    let!(:activity) { create(:activity, user_id: user.id) }
+    let!(:activity) { create(:activity, user: user.id) }
     subject { response }
 
     before do

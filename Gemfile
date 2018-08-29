@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'jquery-datatables'
+gem 'ajax-datatables-rails'
 gem 'draper'
 gem 'sidekiq'
 gem 'will_paginate'
@@ -23,6 +25,8 @@ gem 'geocoder'
 gem 'haml-rails', '~> 1.0'
 gem 'json'
 gem 'rest-client'
+gem 'ransack'
+# nice handling for services object
 gem 'light_operations'
 
 group :development, :test do
