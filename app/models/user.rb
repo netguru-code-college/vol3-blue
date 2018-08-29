@@ -13,11 +13,16 @@
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
-#
 
+#  user_name              :string
+#  location               :string
+#
+#
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+  validates :user_name, presence: true
   has_many :activities
+  has_many :locations
 end

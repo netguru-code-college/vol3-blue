@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.new(activity_params)
     if @activity.save
-      redirect_to @activity, notice: 'Activity was successfully created.'
+      redirect_to action: 'index', notice: 'Activity was successfully created.'
     else
       render :new
     end

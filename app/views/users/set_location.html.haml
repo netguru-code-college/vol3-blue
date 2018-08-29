@@ -1,0 +1,23 @@
+.row
+	.col-md-12
+		= #text_field_tag :stock, params[:stock], placeholder: "Enter the city", autofocus: true,
+                                               class: "form-control search-box input-lg" 
+
+%table.table
+	%thead
+		%tr
+		%th{:scope => "col"} City
+		%th{:scope => "col"} Choose
+	%tbody
+		%tr
+		%th{:scope => "row"} Cracow
+		%td 
+			=link_to "Choose", "#", class: "btn btn-primary"
+		%tr
+		%th{:scope => "row"} Poznan
+		%td 
+			=link_to "Choose", "#", class: "btn btn-primary"
+		%tr
+		%th{:scope => "row"} Warsaw
+		%td 
+			=link_to "Choose", "#", class: "btn btn-primary"

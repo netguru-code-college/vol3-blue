@@ -21,8 +21,8 @@ class Requirement < ApplicationRecord
     length: {minimum: 2, maximum: 30},
     format: /[a-zA-Z]{2,}/
 
-    validates :value,
+  validates :value,
     format: /[0-9]/
 
-    belongs_to :activity
+  belongs_to :activity
 end
