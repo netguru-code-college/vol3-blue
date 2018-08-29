@@ -13,5 +13,6 @@
 require 'rails_helper'
 
 describe Location, type: :model do
+  it { is_expected.to belong_to(:city) }
 
 end

@@ -12,7 +12,10 @@
 
 FactoryBot.define do
   factory :location do
-    gps_latitude { Faker::Address.latitude }
-    gps_longitude { Faker::Address.longitude }
+
+     user_id 1
+     city_id 1
+     open_weather_city_id 1
+
   end
 end
