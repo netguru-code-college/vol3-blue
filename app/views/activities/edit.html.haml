@@ -9,3 +9,4 @@
     = link_to 'New Location', new_location_path, class: 'btn btn-success', style: 'width: 200px'
   .col-sm-6
     = render partial: 'requirements', locals: {activity: @activity}
+    = link_to 'New Requirement', new_activity_requirement_path(@activity), class: 'btn btn-success', style: 'width: 200px'

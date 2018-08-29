@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :activities, except: [:show]
+  resources :activities, except: [:show] do
+    resources :requirements
+  end
   resources :locations
   root 'activities#index'
   get 'set_location', to: 'users#set_location'
