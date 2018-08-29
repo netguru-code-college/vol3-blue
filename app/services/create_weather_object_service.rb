@@ -2,14 +2,14 @@ class CreateWeatherObjectService
   def initialize(params)
     params = JSON.parse(params)
     
-    @temp = params.dig("main", "temp")
+    @temperature = params.dig("main", "temp")
     @humidity = params.dig("main", "humidity")
     @clouds = params.dig("clouds", "all")
   end
 
   def call
     ::WeatherObject.new(
-      temp: temp, 
+      temperature: temperature, 
       humidity: humidity, 
       clouds: clouds
     )
@@ -17,5 +17,5 @@ class CreateWeatherObjectService
 
   private
 
-  attr_reader :temp, :humidity, :clouds
+  attr_reader :temperature, :humidity, :clouds
 end

@@ -1,8 +1,8 @@
 class WeatherObject
-  attr_reader :temp, :humidity, :clouds
+  attr_reader :temperature, :humidity, :clouds
   
-	def initialize(temp:, humidity:, clouds:)
-    @temp = temp
+	def initialize(temperature:, humidity:, clouds:)
+    @temperature = temperature
     @humidity = humidity
     @clouds = clouds
 	end

@@ -12,20 +12,23 @@ class FetchWeatherService
 	
 	def call
 		raw_response = make_request
-		#raw_response
 
-		create_weather_object(raw_response, city_id)
+		create_weather_object(raw_response)
 	end
 
 	private
 
-	def create_weather_object(weather_response, city_id)
-		CreateWeatherObjectService.new(weather_response, city_id).call
+	def create_weather_object(weather_response)
+		CreateWeatherObjectService.new(weather_response).call
 	end
 
 	def make_request
 		Rails.cache.fetch(cache_key, expires_in: 10.minutes) do
-			RestClient.get(endopoint).body
+			begin
+				RestClient.get(endopoint).body
+			rescue RestClient::ExceptionWithResponse => e
+				logger.warn ["OpenWeatherApi problem", endpoint, e.response].join(' ')
+			end
 		end
 	end
 
