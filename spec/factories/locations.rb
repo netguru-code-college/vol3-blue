@@ -6,6 +6,8 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  open_weather_city_id :integer
+#  user_id              :integer
+#
 #
 
 FactoryBot.define do
