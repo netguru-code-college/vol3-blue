@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-  	@locations = Location.all
+    @locations = LocationDecorator.decorate_collection(Location.all)
   end
 
   def new
@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
   end
 
   def update
-    @location = Location.find(params[:id])    
+    @location = Location.find(params[:id])
     if(@location.update(location_params))
       redirect_to @location
     else

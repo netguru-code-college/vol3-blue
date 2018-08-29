@@ -36,9 +36,9 @@
 				= location.activity.name
 			%td 
 				H:
-				= location.city.decorate.check_humidity
+				= location.city.check_humidity
 				T:
-				= location.city.decorate.check_temp
+				= location.city.check_temp
 			%td 
 				=location.activity.requirements.map(&:weather_type).join(", ")
 				
