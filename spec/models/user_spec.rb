@@ -14,7 +14,6 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  user_name              :string
-#  location               :string
 #
 
 require 'rails_helper'
