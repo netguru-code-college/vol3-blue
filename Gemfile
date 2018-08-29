@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'draper'
 gem 'sidekiq'
+gem 'simple_form'
 gem 'will_paginate'
 gem 'open-weather'
 gem 'bootsnap', '>= 1.1.0', require: false
