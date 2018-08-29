@@ -3,13 +3,7 @@
 - if @locations.any?
 	- @locations.each do |location|
 		.card.card-body.bg-light
-			%h5= location.name
-			%h6
-			Latitude: 
-			= location.gps_latitude
-			%h6
-			Longitude:
-			= location.gps_longitude
+			%h5= location.open_weather_city_id
 			<br><br>
 			=link_to "More", location_path(location), class: 'btn btn-primary', style: 'width: 100px'
 
