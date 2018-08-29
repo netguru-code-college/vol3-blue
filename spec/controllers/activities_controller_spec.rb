@@ -14,18 +14,6 @@ RSpec.describe ActivitiesController do
     it { is_expected.to have_http_status(:success) }
   end
 
-  describe 'GET #show' do
-    let!(:activity) { create(:activity, user_id: user.id) }
-    subject { response }
-
-    before do
-      sign_in user
-      get :show, params: { id: activity.id }
-    end
-
-    it { is_expected.to have_http_status(:success) }
-  end
-
   describe 'GET #edit' do
     let!(:activity) { create(:activity, user_id: user.id) }
     subject { response }

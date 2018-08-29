@@ -22,7 +22,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'geocoder'
 gem 'haml-rails', '~> 1.0'
 gem 'json', '~> 1.8'
-gem 'rest-client', '~> 2.0', '>= 2.0.2'
+gem 'rest-client'
+gem 'light_operations'
 
 group :development, :test do
   gem "capybara"
@@ -36,6 +37,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'erb2haml'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
