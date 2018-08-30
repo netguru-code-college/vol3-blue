@@ -1,7 +1,9 @@
-%h5 Locations
+%h5 Locations:
 %ul
+
   - activity.locations.each do |location|
     %li= location.inspect
     - if edit_action?
       = link_to 'Edit', edit_activity_location_path(activity, location), class: 'btn btn-sm btn-outline-info'
       = link_to 'Destroy', [activity, location], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'
+
