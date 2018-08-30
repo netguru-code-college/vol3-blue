@@ -1,5 +1,10 @@
 %h5 Locations:
 %ul
-.div.activity{:style => "text-align: justify"}
 	- activity.locations.each do |location|
-		.btn.btn-success{:style => "margin-bottom: 5px "}= location.city.name
+		%li
+			= location.city.name
+			%span status:
+			- if check_if_weather_meets_requirements(activity: activity, location: location)
+				%span You can do it!
+			- else
+				%span Better watch Netflix!
