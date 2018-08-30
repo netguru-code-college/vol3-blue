@@ -1,4 +1,5 @@
-%h5 Locations
+%h5 Locations:
 %ul
- - activity.locations.each do |location|
-  %li= location.inspect
+.div.activity{:style => "text-align: justify"}
+	- activity.locations.each do |location|
+		.btn.btn-success{:style => "margin-bottom: 5px "}= location.city.name

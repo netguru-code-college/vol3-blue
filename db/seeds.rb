@@ -6,8 +6,8 @@ cities_data = JSON.parse(cities_data)
 
 cities_data.each do |city|
   City.find_or_create_by!(
-		name: city["name"],
-	  open_weather_api_id: city["id"],
+	  name: city["name"],
+	  open_weather_api_id: city["id"].to_i,
 	  temp: rand(35),
     humidity: rand(100),
     clouds: rand(100))

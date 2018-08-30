@@ -1,4 +1,7 @@
-%h5 Requirements
+%h5 Requirements:
 %ul
- - activity.requirements.each do |requirement|
-  %li= requirement.inspect
+- activity.requirements.each do |requirement|
+	=requirement.weather_type.capitalize 
+	=requirement.operator 
+	=requirement.value 
+	%br
