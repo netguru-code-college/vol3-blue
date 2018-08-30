@@ -2,7 +2,7 @@
 %ul
   - activity.requirements.each do |requirement|
     %li
-    	=requirement.weather_type.capitalize 
+      =requirement.weather_type.capitalize 
       =requirement.operator 
       =requirement.value 
     - if edit_action?
