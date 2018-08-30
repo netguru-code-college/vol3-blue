@@ -17,5 +17,5 @@ class City < ApplicationRecord
 
   validates :name, :clouds, :humidity, :temp,
       presence: true
-  validates :open_weather_api_id, :temp, :humidity, :clouds, format: /[0-9]/
+  validates :open_weather_api_id, :humidity, :clouds, format: /[0-9]/
 end
