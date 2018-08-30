@@ -1,9 +1,16 @@
 .row
   .col-md-12
+    %h2.text-center Your profile
+.row
+  .col-md-12
+    %h4
+      User name: 
+    %p  
+      #{current_user.user_name}
+    %h4
+      User email:
     %p
-      User name: #{current_user.user_name}
-    %p
-      User email: #{current_user.email}
+      #{current_user.email}
     -# %p
     -#   - if !current_user.location
     -#     #{link_to "Please, set location", set_location_path, class: "btn btn-primary"}
