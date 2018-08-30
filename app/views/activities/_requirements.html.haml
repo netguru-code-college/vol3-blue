@@ -1,7 +1,10 @@
 %h5 Requirements:
 %ul
-- activity.requirements.each do |requirement|
-	=requirement.weather_type.capitalize 
-	=requirement.operator 
-	=requirement.value 
-	%br
+  - activity.requirements.each do |requirement|
+    %li
+      =requirement.weather_type.capitalize 
+      =requirement.operator 
+      =requirement.value 
+    - if edit_action?
+      = link_to 'Edit', edit_activity_requirement_path(activity, requirement), class: 'btn btn-sm btn-outline-info'
+      = link_to 'Destroy', [activity, requirement], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-danger'

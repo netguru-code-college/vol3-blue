@@ -16,22 +16,24 @@ class RequirementsController < ApplicationController
   end
 
   def edit
-  	@Requirement = Requirement.find(params[:id])
+  	@requirement = Requirement.find(params[:id])
   end
 
   def update
-    @Requirement = Requirement.find(params[:id])    
-    if(@Requirement.update(requirement_params))
-      redirect_to @Requirement
+    @activity = Activity.find(params[:activity_id])
+    @requirement = Requirement.find(params[:id])    
+    if(@requirement.update(requirement_params))
+      redirect_to edit_activity_path(@activity)
     else
       render 'edit'
     end 
   end
   
   def destroy
-    @Requirement = Requirement.find(params[:id])
-    @Requirement.destroy
-    redirect_to Requirements_path
+    @activity = Activity.find(params[:activity_id])
+    @requirement = Requirement.find(params[:id])
+    @requirement.destroy
+    redirect_to edit_activity_path(@activity)
   end
   
   private

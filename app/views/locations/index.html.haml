@@ -24,12 +24,12 @@
 				C:
 				= location.city.clouds
 			%td 
-				=location.activity.requirements.map(&:weather_type).join(", ")
-        
-        
--# .row
--# 	.col-md-12
--# 		=link_to 'New Location', new_location_path, class: 'btn btn-success', style: 'width: 200px'
+				- location.activity.requirements.each do |req|
+					%li
+						=req.weather_type.capitalize 
+						=req.operator 
+						=req.value 
+  
 				
 
 

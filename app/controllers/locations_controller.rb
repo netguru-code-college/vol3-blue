@@ -11,7 +11,6 @@ class LocationsController < ApplicationController
   def create
     @activity = Activity.find(params[:activity_id])
     @location = @activity.locations.new(location_params)
-    @location.user = current_user
     if(@location.save)
       flash[:success] = "Location added!"
       redirect_to edit_activity_path(@activity)
@@ -29,18 +28,20 @@ class LocationsController < ApplicationController
   end
 
   def update
+    @activity = Activity.find(params[:activity_id])
     @location = Location.find(params[:id])
     if(@location.update(location_params))
-      redirect_to @location
+      redirect_to edit_activity_path(@activity)
     else
       render 'edit'
     end 
   end
   
   def destroy
+    @activity = Activity.find(params[:activity_id])
     @location = Location.find(params[:id])
     @location.destroy
-    redirect_to locations_path
+    redirect_to edit_activity_path(@activity)
   end
   
   private def location_params
