@@ -6,7 +6,7 @@ cities_data = JSON.parse(cities_data)
 
 cities_data.each do |city|
   City.find_or_create_by!(
-	  name: city["name"],
+		name: city["name"],
 	  open_weather_api_id: city["id"],
 	  temp: rand(35),
     humidity: rand(100),
@@ -23,7 +23,7 @@ operator_array = ['>', '<', '=']
   	u.user_name = Faker::Name.name
   	u.skip_confirmation!
 	end
-  20.times do 
+  20.times do
 	activity = user.activities.find_or_create_by!(name: Faker::Hipster.word)
 	10. times do
 	  location = activity.locations.find_or_create_by!(city_id: City.all.sample.id)
@@ -31,7 +31,7 @@ operator_array = ['>', '<', '=']
 	  location.save!
     requirement = activity.requirements.new
     requirement.weather_type = weather_type_array.sample
-		requirement.operator = operator_array.sample	
+		requirement.operator = operator_array.sample
 		requirement.value = rand(100)
 	  requirement.save!
 	  print '.'
